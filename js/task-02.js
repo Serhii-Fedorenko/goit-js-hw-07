@@ -7,11 +7,13 @@ const ingredients = [
   "Приправы",
 ];
 
-const list = document.querySelector("ul");
+const listEl = document.querySelector("#ingredients");
 
-const item = document.createElement("li");
+const listItemIngredients = ingredients.map(ingredient => {
+    const listItem = document.createElement("li");
+    listItem.textContent = ingredient;
 
-item.textContent = "Poly";
+    return listItem;
+})
 
-list.append(item);
-
+listEl.append(...listItemIngredients);
