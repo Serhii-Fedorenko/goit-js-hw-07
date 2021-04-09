@@ -43,14 +43,15 @@ const galleryRef = document.querySelector("#gallery");
 // galleryRef.append(...galleryDone);
 // --------------------------------------------------------
 
-const galleryDone = images.map(images => {
-        const listItemEl = document.createElement("li");
-        const imgEl = document.createElement("img");
-        imgEl.src = images.url;
-        imgEl.alt = images.alt;
-        imgEl.width = 320;
-        listItemEl.append(imgEl);
-        return listItemEl;
-      });
+const galleryDone = images.map((images) => {
+  const listItemEl = document.createElement("li");
+  listItemEl.classList.add('gallery-item')
+  const imgEl = document.createElement("img");
+  imgEl.classList.add('gallery-image')
+  imgEl.src = images.url;
+  imgEl.alt = images.alt;
+  listItemEl.append(imgEl);
+  return listItemEl;
+});
 
-      galleryRef.append(...galleryDone)
+galleryRef.append(...galleryDone);
