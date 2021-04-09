@@ -9,11 +9,22 @@ const ingredients = [
 
 const listEl = document.querySelector("#ingredients");
 
-const listItemIngredients = ingredients.map(ingredient => {
+// const listItemIngredients = ingredients.map(ingredient => {
+//     const listItem = document.createElement("li");
+//     listItem.textContent = ingredient;
+
+//     return listItem;
+// })
+
+const makeListItemIngredients = options => {
+  return options.map(ingredient => {
     const listItem = document.createElement("li");
     listItem.textContent = ingredient;
 
     return listItem;
-})
+  });
+};
 
-listEl.append(...listItemIngredients);
+const elements = makeListItemIngredients(ingredients);
+
+listEl.append(...elements);
